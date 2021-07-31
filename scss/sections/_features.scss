@@ -1,0 +1,41 @@
+@use '../custom' as *;
+
+#features {
+  background-color: #f3f5fa;
+  padding: 60px 0;
+  overflow: hidden;
+  h2 {
+    text-align: center;
+    padding-bottom: 30px;
+    font-size: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative;
+    color: $color-primary;
+  }
+  .feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #fff;
+    border-radius: .75rem;
+  }
+
+  .svg-figure {
+    background: $color-secondary;
+    color: white;
+  }
+
+  svg {
+    vertical-align: -.125em;
+    margin: .25rem;
+    font-size: 2.5rem;
+    fill: currentColor;
+  }
+
+}

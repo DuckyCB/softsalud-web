@@ -1,0 +1,36 @@
+@use '../custom' as *;
+
+#footer {
+  font-size: 14px;
+  background: $color-secondary;
+
+  .footer-bottom {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: white;
+  }
+
+  .copyright {
+    float: left;
+  }
+
+  .credits {
+    float: right;
+    font-size: 13px;
+  }
+
+  @media (max-width: 768px) {
+    .footer-bottom {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    .copyright, .credits {
+      text-align: center;
+      float: none;
+    }
+    .credits {
+      padding-top: 4px;
+    }
+  }
+
+}

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<!-- ===== Meta tags ===== -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Patricio Carrau">
+	<meta content="Softsalud" name="description">
+	<meta content="Softsalud" name="keywords">
+
+	<title>SoftSalud emergency triage</title>
+	<link rel="shortcut icon" type="image/jpg" href="assets/img/favicon.png"/>
+
+	<!-- ===== Custom CSS ===== -->
+	<link rel="stylesheet" href="assets/css/styled.css">
+
+</head>
+
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+	<symbol id="gear" viewBox="0 0 16 16">
+		<path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+		<path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+	</symbol>
+	<symbol id="shield" viewBox="0 0 16 16">
+		<path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"/>
+	</symbol>
+	<symbol id="piggy-bank" viewBox="0 0 16 16">
+		<path d="M5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm1.138-1.496A6.613 6.613 0 0 1 7.964 4.5c.666 0 1.303.097 1.893.273a.5.5 0 0 0 .286-.958A7.602 7.602 0 0 0 7.964 3.5c-.734 0-1.441.103-2.102.292a.5.5 0 1 0 .276.962z"/>
+		<path fill-rule="evenodd" d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069c0-.145-.007-.29-.02-.431.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a.95.95 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.735.735 0 0 0-.375.562c-.024.243.082.48.32.654a2.112 2.112 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595zM2.516 6.26c.455-2.066 2.667-3.733 5.448-3.733 3.146 0 5.536 2.114 5.536 4.542 0 1.254-.624 2.41-1.67 3.248a.5.5 0 0 0-.165.535l.66 2.175h-.985l-.59-1.487a.5.5 0 0 0-.629-.288c-.661.23-1.39.359-2.157.359a6.558 6.558 0 0 1-2.157-.359.5.5 0 0 0-.635.304l-.525 1.471h-.979l.633-2.15a.5.5 0 0 0-.17-.534 4.649 4.649 0 0 1-1.284-1.541.5.5 0 0 0-.446-.275h-.56a.5.5 0 0 1-.492-.414l-.254-1.46h.933a.5.5 0 0 0 .488-.393zm12.621-.857a.565.565 0 0 1-.098.21.704.704 0 0 1-.044-.025c-.146-.09-.157-.175-.152-.223a.236.236 0 0 1 .117-.173c.049-.027.08-.021.113.012a.202.202 0 0 1 .064.199z"/>
+	</symbol>
+	<symbol id="dice" viewBox="0 0 16 16">
+		<path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
+		<path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-4-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+	</symbol>
+	<symbol id="list">
+		<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+	</symbol>
+</svg>
+
+<!--    ##############################################################-->
+<!--    # NAVBAR -->
+<!--    ##############################################################-->
+
+<nav class="navbar navbar-expand-sm fixed-top nav-top" aria-label="Third navbar example">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#top">
+			<img src="assets/img/icon.svg" alt="Logo" width="40" height="40">
+			<span>SoftSalud</span>
+		</a>
+
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+				aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list navbar-toggler-icon" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+			</svg>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarMenu">
+			<ul class="navbar-nav justify-content-end navbar-collapse mb-sm-0 align-items-stretch">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownLang" data-bs-toggle="dropdown"
+					   aria-expanded="false">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+							 class="bi bi-globe" viewBox="0 0 16 16">
+							<path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/>
+						</svg>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="dropdownLang">
+						<li><a class="dropdown-item" onclick="setLang('es')">español</a></li>
+						<li><a class="dropdown-item" onclick="setLang('en')">english</a></li>
+					</ul>
+				</li>
+				<!-- ES -->
+				<li class="nav-item es"><a href="#top" class="nav-link">Inicio</a></li>
+				<li class="nav-item es"><a href="#services" class="nav-link">Servicios</a></li>
+				<li class="nav-item es last"><a href="#contact" class="nav-link">Contacto</a></li>
+				<!-- EN -->
+				<li class="nav-item en"><a href="#top" class="nav-link">Home</a></li>
+				<li class="nav-item en"><a href="#services" class="nav-link">Services</a></li>
+				<li class="nav-item en last"><a href="#contact" class="nav-link">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+<!--    ##############################################################-->
+<!--    # HERO -->
+<!--    ##############################################################-->
+
+<section id="top" class="d-flex align-items-center hero">
+	<div class="container">
+		<h1>SoftSalud</h1>
+		<h2>Emergency triage</h2>
+	</div>
+</section>
+
+<!--    ##############################################################-->
+<!--    # ABOUT -->
+<!--    ##############################################################-->
+<section class="bg-primary py-4">
+	<div class="text-secondary px-4 py-4 text-center bg-primary">
+		<div class="py-5">
+			<!-- ES -->
+			<h2 class="display-1 fw-bold text-white pb-5 es">¿Qué es un triaje?</h2>
+			<!-- EN -->
+			<h2 class="display-1 fw-bold text-white pb-5 en">What is a triage? </h2>
+			<div class="col-lg-6 mx-auto">
+				<!-- ES -->
+				<p class="fs-5 mb-4 text-white es">
+					Un triaje es una herramienta de selección que ordena la prestación asistencial de los pacientes,
+					de acuerdo a sus prioridades (urgencia) en cuanto a requerimientos y recursos existentes en el
+					centro asistencial que se realiza.
+				</p>
+				<!-- EN -->
+				<p class="fs-5 mb-4 text-white en">
+					A triage is a selection tool that orders the healthcare provision of patients, according to
+					their priorities (urgency) in terms of requirements and existing resources in the healthcare
+					center being carried out.
+				</p>
+				<div class="d-grid d-sm-flex justify-content-sm-center">
+					<button type="button" class="btn btn-primary-dark btn-outline-light btn-lg px-4 es"
+							onclick="window.location.href='about.html'">
+						Leer más
+					</button>
+					<button type="button" class="btn btn-primary-dark btn-outline-light btn-lg px-4 en"
+							onclick="window.location.href='about.html'">
+						Read more
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--    ##############################################################-->
+	<!--    # TRIAJE -->
+	<!--    ##############################################################-->
+	<div id="triaje" class="container my-5 text-center bg-white">
+		<div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg text-center">
+			<div class="col-lg-8 p-3 p-lg-5 pt-lg-3 mx-auto">
+				<!-- ES -->
+				<h2 class="display-5 fw-bold lh-1 mb-5 es">
+					Triaje = Seguridad en la asistencia de urgencias/emergencias
+				</h2>
+				<p class="lead es">
+					La clasificación informatizada en emergencias, es una herramienta fundamental para la gestión de
+					recursos humanos, materiales, tiempos y espacios.
+				</p>
+				<!-- EN -->
+				<h2 class="display-5 fw-bold lh-1 mb-5 en">
+					Triage = Safety in emergency / emergency assistance
+				</h2>
+				<p class="lead en">
+					The computerized classification in emergencies is a fundamental tool for the management of human
+					resources, materials, times and spaces.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--    ##############################################################-->
+<!--    # SERVICES -->
+<!--    ##############################################################-->
+<div id="services" class="services py-4 text-center bg-primary-light">
+	<!-- ES -->
+	<h2 class="display-1 fw-bold pb-3 es">¿Qué ofrecemos?</h2>
+	<!-- EN -->
+	<h2 class="display-1 fw-bold pb-3 en">What do we offer?</h2>
+	<div class="col-lg-6 mx-auto px-4">
+		<!-- ES -->
+		<em class="display-6 es">
+			La plataforma de gestión mas eficiente en la clasificación de la atención.
+		</em>
+		<p class="lead mb-4 pt-4 es">
+			SoftSalud Triaje es una plataforma de gestión, que dota al personal de una herramienta muy potente para la
+			clasificación de los pacientes, dejando un registro para ser consultado desde cualquier lugar.
+		</p>
+		<!-- EN -->
+		<em class="display-6 en">
+			The most efficient management platform in the classification of care.
+		</em>
+		<p class="lead mb-4 pt-4 en">
+			SoftSalud Triage is a management platform that provides staff with a very powerful tool for classifying
+			patients, leaving a record to be consulted from anywhere.
+		</p>
+		<div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+			<button type="button" class="btn btn-primary-light btn-outline-secondary btn-lg px-4 es" onclick="window.location.href='services.html'">
+				Leer más
+			</button>
+			<button type="button" class="btn btn-primary-light btn-outline-secondary btn-lg px-4 en" onclick="window.location.href='services.html'">
+				Read more
+			</button>
+		</div>
+	</div>
+	<div>
+		<div class="container pad">
+			<img src="assets/img/diagram.png" class="img-fluid border rounded-3 pad-img p-4" alt="Diagrama de
+				funcionamiento" loading="lazy" width="754" height="505">
+		</div>
+	</div>
+</div>
+
+<!--    ##############################################################-->
+<!--    # FEATURES -->
+<!--    ##############################################################-->
+<section id="features" class="services section-bg">
+	<div class="container" data-aos="fade-up">
+		<!-- ES -->
+		<div class="es">
+			<h2>Ventajas del servicio</h2>
+		</div>
+		<!-- EN -->
+		<div class="en">
+			<h2>Advantages of the service </h2>
+		</div>
+
+		<div class="row text-center">
+			<div class="col-xl-3 col-md-6 align-items-stretch" data-aos="zoom-in">
+				<div class="icon-box">
+					<div class="feature-icon svg-figure">
+						<svg class="bi" width="1em" height="1em"><use xlink:href="#gear"/></svg>
+					</div>
+					<!-- ES -->
+					<h3 class="fw-bold es">Eficiente</h3>
+					<p class="es">Organizado y personalizable</p>
+					<!-- EN -->
+					<h3 class="fw-bold en">Efficient</h3>
+					<p class="en">Organized and customizable</p>
+				</div>
+			</div>
+
+			<div class="col-xl-3 col-md-6 align-items-stretch mt-4 mt-md-0" data-aos="zoom-in">
+				<div class="icon-box">
+					<div class="feature-icon svg-figure">
+						<svg class="bi" width="1em" height="1em"><use xlink:href="#piggy-bank"/></svg>
+					</div>
+					<!-- ES -->
+					<h3 class="fw-bold es">Asequible</h3>
+					<p class="es">Sin inversión inicial</p>
+					<!-- ES -->
+					<h3 class="fw-bold en">Affordable</h3>
+					<p class="en">No initial investment </p>
+				</div>
+			</div>
+
+			<div class="col-xl-3 col-md-6 align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in">
+				<div class="icon-box">
+					<div class="feature-icon svg-figure">
+						<svg class="bi" width="1em" height="1em"><use xlink:href="#dice"/></svg>
+					</div>
+					<!-- ES -->
+					<h3 class="fw-bold es">Simple</h3>
+					<p class="es">Fácil de usar</p>
+					<!-- EN -->
+					<h3 class="fw-bold en">Simple</h3>
+					<p class="en">Easy to use</p>
+				</div>
+			</div>
+
+			<div class="col-xl-3 col-md-6 align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in">
+				<div class="icon-box">
+					<div class="feature-icon svg-figure">
+						<svg class="bi" width="1em" height="1em"><use xlink:href="#shield"/></svg>
+					</div>
+					<!-- ES -->
+					<h3 class="fw-bold es">Seguro</h3>
+					<p class="es">En la atención del cliente</p>
+					<!-- EN -->
+					<h3 class="fw-bold en">Safe</h3>
+					<p class="en">In customer care </p>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</section>
+
+
+<!--    ##############################################################-->
+<!--    # HOW IT WORKS -->
+<!--    ##############################################################-->
+<div class="text-secondary px-4 py-4 text-center bg-primary">
+	<div class="py-5">
+		<!-- ES -->
+		<h2 class="display-1 fw-bold text-white pb-5 es">¿Cómo funciona el servicio?</h2>
+		<!-- EN -->
+		<h2 class="display-1 fw-bold text-white pb-5 en">How does the service work?</h2>
+		<div class="col-lg-6 mx-auto">
+			<!-- ES -->
+			<p class="fs-5 mb-4 text-white es">
+				SoftSalud otorga el enlace y permisos de utilización del software que se incorpora a los sistemas
+				del cliente que da soporte inteligente a la hora de la clasificación para una o varias puertas de
+				emergencia/urgencia.
+			</p>
+			<!-- EN -->
+			<p class="fs-5 mb-4 text-white en">
+				SoftSalud grants the link and permissions to use the software that is incorporated into the client's
+				systems that provides intelligent support when classifying for one or more emergency / urgency doors.
+			</p>
+		</div>
+	</div>
+</div>
+
+<!--    ##############################################################-->
+<!--    # CONTACT -->
+<!--    ##############################################################-->
+<section id="contact" class="contact m-3 mb-5">
+	<div class="container" data-aos="fade-up">
+		<div class="row gx-0">
+			<div class="col-lg-6 d-flex flex-column justify-content-center text-center" data-aos="fade-up" data-aos-delay="200">
+				<div class="content">
+					<!-- ES -->
+					<h3 class="es">Contacto</h3>
+					<!-- EN -->
+					<h3 class="en">Contact</h3>
+					<h2>+598 99 282 482</h2>
+					<p>
+						Montevideo, Uruguay
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+				<img src="assets/img/contact.webp" class="img-fluid" alt="">
+			</div>
+
+		</div>
+	</div>
+
+</section>
+
+<!--    ##############################################################-->
+<!--    # FOOTER -->
+<!--    ##############################################################-->
+<footer id="footer">
+	<div class="container footer-bottom clearfix">
+		<div class="copyright">
+			&copy; <strong><span>SoftSalud</span></strong>
+		</div>
+		<div class="credits">
+			Designed by Ducky
+		</div>
+	</div>
+</footer>
+
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

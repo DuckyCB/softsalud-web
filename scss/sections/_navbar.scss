@@ -1,0 +1,51 @@
+@use '../custom' as *;
+
+.nav-top {
+
+    background: white;
+    color: $color-primary;
+
+    span {
+        font-weight: bolder;
+        color: $color-primary;
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+
+    li {
+        padding: 0;
+        a {
+            font-weight: 600;
+            margin: 10px;
+            color: $color-primary;
+            &:hover {
+                color: $color-secondary;
+            }
+        }
+    }
+
+    button {
+        color: $color-primary;
+    }
+
+}
+
+.dropdown-menu {
+    min-width: auto;
+
+    .dropdown-item {
+        width: auto;
+
+        &:hover {
+            background: white;
+        }
+
+    }
+}
+
+.show {
+    .last {
+        border-bottom: 1px solid $color-secondary;
+    }
+}

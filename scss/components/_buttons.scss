@@ -1,0 +1,34 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.menu {
+
+  @include media-breakpoint-up(sm) {
+    display: none;
+  }
+
+}
+
+.btn-primary-light {
+  color: $color-primary;
+  border-color: $color-primary;
+
+  &:hover {
+    color: white !important;
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
+
+}
+
+.btn-primary-dark {
+  color: white;
+  border-color: white;
+
+  &:hover {
+    color: $color-primary;
+    background-color: white;
+    border-color: white;
+  }
+
+}

@@ -1,0 +1,34 @@
+@use '../custom' as *;
+
+.bg-primary {
+  background-color: $color-primary;
+}
+
+.bg-primary-light {
+  background-color: $color-primary-light;
+
+  button {
+    color: $color-primary;
+    border-color: $color-primary;
+
+  }
+
+  h2 {
+    color: $color-primary;
+  }
+}
+
+.box-secondary {
+  background-color: $color-secondary;
+  color: white;
+}
+
+#triaje {
+  @media (max-width: 575px) {
+    width: auto;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-right: 0.65rem;
+    padding-left: 0.65rem;
+  }
+}

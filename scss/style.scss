@@ -1,0 +1,16 @@
+@use 'custom';
+
+//Import components
+@use 'components/buttons';
+@use 'components/mixins';
+@use 'components/typography';
+@use 'components/language';
+
+//Import sections
+@use 'sections/navbar';
+@use 'sections/hero';
+@use 'sections/sections';
+@use 'sections/services';
+@use 'sections/features';
+@use 'sections/contact';
+@use 'sections/footer';
