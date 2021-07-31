@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Patricio Carrau">
+    <meta content="Softsalud services" name="description">
+    <meta content="Softsalud triaje triage services" name="keywords">
+
+    <title>SoftSalud emergency triage</title>
+    <link rel="shortcut icon" type="image/jpg" href="assets/img/favicon.png"/>
+
+    <!-- ===== Custom CSS ===== -->
+    <link rel="stylesheet" href="assets/css/styled.css">
+
+</head>
+
+
+<body class="d-flex flex-column min-vh-100">
+
+<!--    ##############################################################-->
+<!--    # NAVBAR -->
+<!--    ##############################################################-->
+
+<nav class="navbar navbar-expand-sm fixed-top nav-top" aria-label="Third navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/img/icon.svg" alt="Logo" width="40" height="40">
+            <span>SoftSalud</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list navbar-toggler-icon" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav justify-content-end navbar-collapse mb-sm-0 align-items-stretch">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownLang" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-globe" viewBox="0 0 16 16">
+                            <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/>
+                        </svg>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownLang">
+                        <li><a class="dropdown-item" onclick="setLang('es')">español</a></li>
+                        <li><a class="dropdown-item" onclick="setLang('en')">english</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item es last"><a href="index.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item en last"><a href="index.html" class="nav-link">Home</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--    ##############################################################-->
+<!--    # ABOUT -->
+<!--    ##############################################################-->
+
+<div id="services" class="services py-5 text-center bg-primary-light mt-5">
+    <!-- ES -->
+    <h2 class="display-1 fw-bold py-5 es">¿Qué es un triaje?</h2>
+    <!-- EN -->
+    <h2 class="display-1 fw-bold py-5 en">What is a triage? </h2>
+    <div class="col-lg-6 mx-auto px-4">
+        <!-- EN -->
+        <em class="display-6 pb-3 es">
+            Triaje es un proceso de selección basal, por prioridades asistenciales, estructurada, estandarizada y
+            hoy en día informatizada y automatizada.
+        </em>
+        <p class="lead mb-4 pt-4 es">
+            Selección basal hace referencia a pacientes que llegan en forma ambulatoria a una puerta de emergencia
+            fuera de las situaciones excepcionales como la activación de un plan catástrofe, evento de víctimas
+            múltiples o planes para responder a epidemias, cuyas características son diferentes y no es motivo de
+            referencia para este libro, más allá de lo necesariamente conceptual.
+        </p>
+        <p class="lead mb-4 pt-4 es">
+            Selección por prioridades asistenciales considerando tanto al paciente como al servicio, los pacientes
+            llegan a consultar con algunos problemas que se convierten en una determinada prioridad asistencial,
+            muchas veces imposible de solucionar ipso facto y se debe atender primero aquel con mayor nivel de
+            prioridad, que requiera un tiempo menor de atención para su estabilización previa a su derivación.
+            Cualquier circunstancia que requiera de mayores recursos de los existentes en el centro, debe considerar
+            un traslado sanitario, con lo que esto implique.
+        </p>
+        <p class="lead mb-4 pt-4 es">
+            Estructurado corresponde a la forma de organización en cinco categorías, utilizado en varios sistemas
+            internacionales de triaje, separando las emergencias, las urgencias diferibles o no, de las no urgencias
+            ni emergencias. Cada categoría tendrá su tiempo asociado para asistencia, así como el lugar apropiado
+            para realizar la atención.
+        </p>
+        <p class="lead mb-4 pt-4 es">
+            Estandarizado es una condición básica para evitar la aleatoriedad que generan los criterios individuales
+            de clasificación, además de dar uniformidad al procedimiento realizado por todos en cada uno de los
+            servicios en que se aplica.
+        </p>
+        <p class="lead mb-4 pt-4 es">
+            Informatizado, el proceso tiene un apoyo informático para su registro (como tantos procesos), que
+            permiten su legibilidad, trazabilidad y ordenamiento de los datos generados.
+        </p>
+        <p class="lead mb-4 pt-4 es">
+            Automatizado, lo ofrecido es un triaje con apoyo informático, los pacientes con los mismos síntomas
+            guías y factores discriminantes (características acompañantes y diferenciales para los mismos síntomas),
+            el servicio sugerirá los mismos resultados independientemente del clasificador, obteniendo con un apoyo
+            inteligente para las clasificaciones.
+        </p>
+        <!-- EN -->
+        <em class="display-6 pb-3 en">
+            Triage is a basal selection process, based on healthcare priorities, structured, standardized and today
+            computerized and automated.
+        </em>
+        <p class="lead mb-4 pt-4 en">
+            Basal selection refers to patients who arrive at an outpatient basis to an emergency door outside
+            exceptional situations such as the activation of a catastrophe plan, multiple victims event or plans to
+            respond to epidemics, whose characteristics are different and is not a reason for reference for this
+            book, beyond the necessarily conceptual.
+        </p>
+        <p class="lead mb-4 pt-4 en">
+            Selection by care priorities considering both the patient and the service, patients come to consult with
+            some problems that become a specific care priority, many times impossible to solve ipso facto and the
+            one with the highest level of priority, which requires a shorter attention time for their stabilization
+            prior to their referral. Any circumstance that requires more resources than those existing in the
+            center, should consider a medical transfer, with what this implies.
+        </p>
+        <p class="lead mb-4 pt-4 en">
+            Structured corresponds to the form of organization in five categories, used in various international
+            triage systems, separating emergencies, deferred urgencies or not, from non-urgencies nor
+            emergencies. Each category will have its associated time for attendance, as well as the appropriate
+            place to perform the care.
+        </p>
+        <p class="lead mb-4 pt-4 en">
+            Standardized is a basic condition to avoid the randomness generated by the individual classification
+            criteria, in addition to giving uniformity to the procedure carried out by everyone in each of the
+            services in which it is applied.
+        </p>
+        <p class="lead mb-4 pt-4 en">
+            Computerized, the process has computer support for its registration (like many processes), which allow
+            its readability, traceability and ordering of the data generated.
+        </p>
+        <p class="lead mb-4 pt-4 en">
+            Automated, what is offered is a triage with computer support, patients with the same guide symptoms and
+            discriminating factors (accompanying and differential characteristics for the same symptoms), the
+            service will suggest the same results regardless of the classifier, obtaining intelligent support for
+            classifications .
+        </p>
+    </div>
+</div>
+
+<!--    ##############################################################-->
+<!--    # FOOTER -->
+<!--    ##############################################################-->
+<footer id="footer" class="mt-auto">
+    <div class="container footer-bottom clearfix">
+        <div class="copyright">
+            &copy; <strong><span>SoftSalud</span></strong>
+        </div>
+        <div class="credits">
+            Designed by Ducky
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
